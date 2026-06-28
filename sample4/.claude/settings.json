@@ -1,0 +1,24 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python -c ' *)",
+      "Bash(python -c \"import playwright; print\\('pw ok'\\)\")",
+      "Bash(pip install *)",
+      "Bash(python -m playwright install chromium)",
+      "Bash(python -)",
+      "Bash(mkdir -p site/images/photos site/images/parts)",
+      "Bash(cp \"assets_transparent/collage_photos/ChatGPT Image 2026年6月14日 23_23_36 \\(1\\).png\" \"site/images/photos/still-vase-comb.png\")",
+      "Bash(cp \"assets_transparent/collage_photos/ChatGPT Image 2026年6月14日 23_23_37 \\(2\\).png\" \"site/images/photos/still-vase-wood.png\")",
+      "Bash(cp \"assets_transparent/collage_photos/ChatGPT Image 2026年6月14日 23_23_37 \\(3\\).png\" \"site/images/photos/interior-mirror.png\")",
+      "Bash(cp \"assets_transparent/collage_photos/ChatGPT Image 2026年6月14日 23_23_37 \\(4\\).png\" \"site/images/photos/style-layer.png\")",
+      "Read(//c/Program Files/Google/Chrome/Application/**)",
+      "Read(//c/Program Files \\(x86\\)/Microsoft/Edge/Application/**)",
+      "Bash('/c/Program Files/Google/Chrome/Application/chrome.exe' --headless --disable-gpu --hide-scrollbars --window-size=440,2400 --screenshot=shot-mobile.png --default-background-color=0 file:///D:/work/HP/sample4/site/index.html)",
+      "Bash('/c/Program Files/Google/Chrome/Application/chrome.exe' --headless --disable-gpu --hide-scrollbars --window-size=1280,3200 --screenshot=shot-desktop.png file:///D:/work/HP/sample4/site/index.html)",
+      "Bash(cd /d/work/HP/sample4 && rm -f qa-wide.png && echo cleaned)"
+    ],
+    "additionalDirectories": [
+      "d:\\d\\work\\HP\\sample4"
+    ]
+  }
+}

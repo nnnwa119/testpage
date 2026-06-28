@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>森の樹工務店 ｜ 自然と暮らす、家をつくる。</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F4F3EF;
+  --bg-warm:#EEEBE1;
+  --bg-card:#FBFAF6;
+  --green:#43532B;
+  --green-d:#374527;
+  --sage:#969C71;
+  --cream:#E9CBA6;
+  --beige:#D7C3AB;
+  --wood:#B8773F;
+  --ink:#3A382F;
+  --ink-soft:#736E60;
+  --ink-faint:#857F6C;
+  --line:#DAD5C7;
+  --line-soft:#E6E2D7;
+  --fd:"Shippori Mincho",serif;
+  --fb:"Zen Kaku Gothic New",sans-serif;
+  --fl:"Cormorant Garamond",serif;
+  --container:1180px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--fb);
+  color:var(--ink);
+  background:var(--bg);
+  line-height:1.9;
+  font-weight:300;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+a:focus-visible,button:focus-visible{outline:2px solid var(--green);outline-offset:4px;border-radius:2px}
+:where(section[id],#top){scroll-margin-top:96px}
+.container{max-width:var(--container);margin:0 auto;padding:0 40px}
+
+/* ---------- eyebrow label ---------- */
+.eyebrow{
+  font-family:var(--fl);
+  font-size:.86rem;
+  letter-spacing:.42em;
+  text-transform:uppercase;
+  color:var(--sage);
+  font-weight:500;
+  display:flex;align-items:center;gap:18px;
+}
+.eyebrow::after{content:"";width:46px;height:1px;background:var(--sage);opacity:.6}
+.eyebrow.center{justify-content:center}
+.eyebrow.center::before{content:"";width:46px;height:1px;background:var(--sage);opacity:.6}
+
+h2.disp{
+  font-family:var(--fd);
+  font-weight:500;
+  font-size:clamp(1.9rem,3.6vw,2.85rem);
+  line-height:1.55;
+  letter-spacing:.08em;
+  color:var(--ink);
+}
+.lead{
+  color:var(--ink-soft);
+  font-size:.95rem;
+  line-height:2.15;
+  letter-spacing:.04em;
+}
+.txtlink{
+  font-family:var(--fb);
+  font-size:.82rem;
+  letter-spacing:.22em;
+  color:var(--ink-soft);
+  display:inline-flex;align-items:center;gap:16px;
+  transition:gap .3s ease,color .3s ease;
+}
+.txtlink .arrow{width:40px;height:1px;background:var(--ink-soft);position:relative;display:inline-block}
+.txtlink .arrow::after{content:"";position:absolute;right:0;top:-3px;width:7px;height:7px;border-top:1px solid var(--ink-soft);border-right:1px solid var(--ink-soft);transform:rotate(45deg)}
+.txtlink:hover{gap:24px;color:var(--green)}
+
+/* ---------- buttons ---------- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:space-between;gap:30px;
+  font-family:var(--fb);font-weight:400;font-size:.86rem;letter-spacing:.18em;
+  padding:20px 30px;background:var(--green);color:#F4F3EF;
+  transition:background .35s ease,transform .35s ease;
+}
+.btn .ar{width:34px;height:1px;background:currentColor;position:relative}
+.btn .ar::after{content:"";position:absolute;right:0;top:-3px;width:7px;height:7px;border-top:1px solid currentColor;border-right:1px solid currentColor;transform:rotate(45deg)}
+.btn:hover{background:var(--green-d);transform:translateY(-2px)}
+
+/* ---------- header ---------- */
+header{
+  position:fixed;top:0;left:0;right:0;z-index:50;
+  display:flex;align-items:stretch;justify-content:space-between;
+  background:rgba(244,243,239,.86);backdrop-filter:blur(8px);
+  border-bottom:1px solid transparent;
+  transition:background .4s ease,border-color .4s ease;
+}
+header.scrolled{background:rgba(244,243,239,.96);border-color:var(--line-soft)}
+.brand{display:flex;align-items:center;gap:14px;padding:14px 0 14px 40px}
+.brand img{width:46px;height:auto}
+.brand .name{font-family:var(--fd);font-size:1.18rem;letter-spacing:.18em;color:var(--ink);font-weight:500;line-height:1.2}
+.brand .romaji{font-family:var(--fl);font-size:.6rem;letter-spacing:.34em;color:var(--ink-faint);text-transform:uppercase;margin-top:3px}
+nav{display:flex;align-items:center;gap:30px;margin-left:auto;padding-right:30px}
+nav a{font-size:.8rem;letter-spacing:.12em;color:var(--ink);position:relative;padding:6px 0;transition:color .3s}
+nav a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:1px;background:var(--green);transition:width .3s}
+nav a:hover{color:var(--green)}
+nav a:hover::after{width:100%}
+.header-cta{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;background:var(--green);color:#F2EFE6;padding:0 40px;font-size:.82rem;letter-spacing:.14em;transition:background .35s}
+.header-cta:hover{background:var(--green-d)}
+.header-cta .ar{width:30px;height:1px;background:currentColor;position:relative}
+.header-cta .ar::after{content:"";position:absolute;right:0;top:-3px;width:6px;height:6px;border-top:1px solid currentColor;border-right:1px solid currentColor;transform:rotate(45deg)}
+.menu-toggle{display:none}
+/* ---------- mobile nav overlay ---------- */
+.mobile-nav{position:fixed;inset:0;z-index:60;background:var(--bg);display:flex;flex-direction:column;justify-content:center;align-items:center;gap:6px;
+  transform:translateY(-100%);transition:transform .55s cubic-bezier(.2,.7,.2,1);visibility:hidden}
+body.menu-open{overflow:hidden}
+body.menu-open .mobile-nav{transform:none;visibility:visible}
+.mobile-nav a{font-family:var(--fd);font-size:1.25rem;letter-spacing:.16em;color:var(--ink);padding:13px}
+.mobile-nav .m-cta{margin-top:22px}
+.mobile-nav .close{position:absolute;top:22px;right:28px;width:40px;height:40px;border:none;background:none;cursor:pointer}
+.mobile-nav .close::before,.mobile-nav .close::after{content:"";position:absolute;left:8px;top:19px;width:24px;height:1.5px;background:var(--ink)}
+.mobile-nav .close::before{transform:rotate(45deg)}.mobile-nav .close::after{transform:rotate(-45deg)}
+
+/* ---------- hero ---------- */
+.hero{position:relative;padding-top:105px;min-height:88vh;display:flex;align-items:center;overflow:hidden}
+.hero-photo{
+  position:absolute;top:78px;right:0;width:58%;height:82%;
+  z-index:0;
+}
+.hero-photo img{width:100%;height:100%;object-fit:contain;object-position:right top;
+  filter:drop-shadow(0 24px 44px rgba(67,83,43,.10));}
+@keyframes heroIn{from{opacity:0;transform:scale(1.035)}to{opacity:1;transform:none}}
+.js .hero-photo{animation:heroIn 1.5s cubic-bezier(.2,.7,.2,1) both}
+.hero-inner{position:relative;z-index:2;width:100%}
+.hero-copy{max-width:560px}
+.hero h1{
+  font-family:var(--fd);font-weight:500;
+  font-size:clamp(2.7rem,6vw,4.4rem);
+  line-height:1.42;letter-spacing:.12em;color:var(--ink);
+}
+.hero .en{font-family:var(--fl);font-style:italic;font-size:1.5rem;letter-spacing:.06em;color:var(--sage);margin-top:26px;line-height:1.5}
+.hero .lead{margin-top:30px;max-width:380px}
+.hero .btn{margin-top:40px}
+.hero-birds{position:absolute;top:20%;left:32%;width:140px;z-index:1;opacity:.9}
+
+/* generic section spacing */
+section{position:relative}
+.pad{padding:120px 0}
+
+/* ---------- concept ---------- */
+.concept{padding:120px 0 90px}
+.concept-grid{display:grid;grid-template-columns:0.92fr 1.08fr;gap:70px;align-items:center}
+.concept-text .eyebrow{margin-bottom:34px}
+.concept-text h2{margin-bottom:34px}
+.concept-text .lead{margin-bottom:42px}
+.concept-photos{display:grid;grid-template-columns:1.12fr 1fr;grid-template-rows:1fr 1fr;gap:18px;height:540px}
+.concept-photos .p-tall{grid-row:1 / span 2;border-radius:3px;overflow:hidden;height:100%}
+.concept-photos .p-tall img{width:100%;height:100%;object-fit:cover}
+.concept-photos .p-s{border-radius:3px;overflow:hidden}
+.concept-photos .p-s img{width:100%;height:100%;object-fit:cover}
+.tags{display:flex;flex-wrap:wrap;align-items:center;gap:0;margin-top:64px;justify-content:center;
+  font-family:var(--fd);letter-spacing:.2em;color:var(--ink);font-size:1.02rem}
+.tags span{padding:0 34px;position:relative}
+.tags span+span::before{content:"";position:absolute;left:0;top:50%;transform:translateY(-50%);width:1px;height:18px;background:var(--line)}
+
+/* ---------- transition (mountains / 5つのこと) ---------- */
+.transition{position:relative;padding:80px 0 70px}
+.transition .mt{position:absolute;left:0;bottom:0;width:46%;max-width:560px;opacity:.85;z-index:0}
+.transition .birds{position:absolute;top:30px;left:40%;width:130px;opacity:.8}
+.trans-inner{position:relative;z-index:2;display:flex;align-items:flex-end;justify-content:flex-end;gap:40px}
+.trans-copy{text-align:right}
+.trans-copy h3{font-family:var(--fd);font-weight:500;font-size:clamp(1.4rem,2.4vw,1.9rem);letter-spacing:.1em;color:var(--green);line-height:1.6}
+.trans-copy .sub{font-family:var(--fd);font-size:1.1rem;letter-spacing:.1em;color:var(--ink-soft);margin-top:6px}
+.trans-copy .txtlink{margin-top:26px}
+.pagemark{font-family:var(--fl);text-align:center;color:var(--beige)}
+.pagemark .no{font-size:4.4rem;line-height:1;font-weight:500;color:#CDBFA3}
+.pagemark .pg{font-size:.6rem;letter-spacing:.4em;color:var(--ink-faint);margin-top:6px}
+
+/* ---------- craftsmanship ---------- */
+.craft{position:relative;overflow:hidden;padding:130px 0;min-height:660px;display:flex;align-items:center}
+.craft .container{position:relative;z-index:3;width:100%}
+.craft-text{max-width:42%}
+.craft-text .eyebrow{margin-bottom:32px}
+.craft-text h2{margin-bottom:32px}
+.craft-photo{position:absolute;top:0;right:0;width:48%;height:100%;z-index:1}
+.craft-photo img{width:100%;height:100%;object-fit:cover;border-radius:46% 0 0 46% / 44% 0 0 44%}
+.craft-wave{position:absolute;left:0;bottom:0;width:100%;height:104px;z-index:2;line-height:0;pointer-events:none}
+.craft-wave svg{width:100%;height:100%;display:block}
+.craft-birds{position:absolute;top:12%;left:24%;width:118px;opacity:.8;z-index:3;pointer-events:none}
+
+/* ---------- works ---------- */
+.works{position:relative;padding:140px 0 110px;background:var(--bg-warm)}
+.sep-wave{position:absolute;top:-1px;left:0;width:100%;height:74px;line-height:0;z-index:1;pointer-events:none}
+.sep-wave svg{width:100%;height:100%;display:block}
+.works-head{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:54px;flex-wrap:wrap;gap:20px}
+.works-head .eyebrow{margin-bottom:18px}
+.works-head h2{font-family:var(--fd);font-weight:500;font-size:clamp(1.7rem,3vw,2.4rem);letter-spacing:.12em}
+.works-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:36px}
+.work-card{cursor:pointer}
+.work-card .thumb{overflow:hidden;border-radius:3px;aspect-ratio:4/3}
+.work-card .thumb img{width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+.work-card:hover .thumb img{transform:scale(1.05)}
+.work-card .ttl{font-family:var(--fd);font-size:1.18rem;letter-spacing:.08em;margin-top:22px;color:var(--ink)}
+.work-card .meta{display:flex;align-items:center;justify-content:space-between;margin-top:10px}
+.work-card .loc{font-size:.78rem;letter-spacing:.1em;color:var(--ink-faint)}
+.work-card .ar{width:34px;height:1px;background:var(--ink-soft);position:relative;transition:width .3s}
+.work-card .ar::after{content:"";position:absolute;right:0;top:-3px;width:6px;height:6px;border-top:1px solid var(--ink-soft);border-right:1px solid var(--ink-soft);transform:rotate(45deg)}
+.work-card:hover .ar{width:48px}
+
+/* ---------- process ---------- */
+.process{padding:120px 0;background:var(--bg-warm)}
+.mt-band{display:flex;justify-content:center;margin-top:46px}
+.mt-band img{width:min(880px,92%);opacity:.92}
+.process .eyebrow{margin-bottom:18px}
+.process h2{font-family:var(--fd);font-weight:500;font-size:clamp(1.7rem,3vw,2.4rem);letter-spacing:.12em;margin-bottom:22px}
+.proc-lead{max-width:560px;margin-bottom:56px}
+.steps{display:grid;grid-template-columns:repeat(5,1fr);gap:30px}
+.step{position:relative;padding-top:30px}
+.step::before{content:"";position:absolute;top:0;left:0;width:100%;height:1px;background:var(--line)}
+.step .no{font-family:var(--fl);font-size:2.6rem;font-weight:500;color:var(--sage);line-height:1;letter-spacing:.04em}
+.step .st{font-family:var(--fd);font-size:1.04rem;letter-spacing:.06em;margin-top:14px;color:var(--ink)}
+.step .ds{font-size:.8rem;line-height:1.95;color:var(--ink-soft);margin-top:14px}
+
+/* ---------- voice ---------- */
+.voice{position:relative;overflow:hidden;background:var(--bg);min-height:560px;padding:178px 0 170px}
+.voice .container{position:relative;z-index:4}
+.voice-text{max-width:40%}
+.voice-text .eyebrow{margin-bottom:22px}
+.voice-text h2{font-family:var(--fd);font-weight:500;font-size:clamp(1.7rem,3vw,2.3rem);letter-spacing:.12em;margin-bottom:26px}
+.voice-text .lead{margin-bottom:24px}
+.voice-text .who{font-size:.82rem;letter-spacing:.14em;color:var(--ink-faint)}
+.voice-photos{position:absolute;top:155px;right:0;width:52%;height:300px;display:grid;grid-template-columns:1.55fr 1fr;gap:16px;z-index:1}
+.voice-photos div{overflow:hidden}
+.voice-photos img{width:100%;height:100%;object-fit:cover}
+.voice-top{position:absolute;top:0;left:0;width:100%;height:170px;z-index:2;line-height:0;pointer-events:none}
+.voice-top svg{width:100%;height:100%;display:block}
+.voice-wave{position:absolute;left:0;bottom:0;width:100%;height:104px;z-index:3;line-height:0;pointer-events:none}
+.voice-wave svg{width:100%;height:100%;display:block}
+
+/* ---------- CTA band ---------- */
+.cta{position:relative;background:var(--green);color:#EFEDE2;padding:96px 0;overflow:hidden}
+.cta-inner{display:grid;grid-template-columns:1.3fr 1fr auto;gap:50px;align-items:center;position:relative;z-index:2}
+.cta h2{font-family:var(--fd);font-weight:500;font-size:clamp(1.6rem,2.8vw,2.3rem);letter-spacing:.1em;line-height:1.7}
+.cta .note{font-size:.85rem;line-height:2;color:#CBD0B7;letter-spacing:.04em}
+.cta .btn{background:transparent;border:1px solid rgba(239,237,226,.5);color:#EFEDE2;white-space:nowrap}
+.cta .btn:hover{background:rgba(239,237,226,.1);border-color:#EFEDE2}
+
+/* ---------- footer ---------- */
+footer{background:var(--bg);padding:80px 0 36px}
+.foot-top{display:grid;grid-template-columns:1.2fr 1.4fr 1fr;gap:50px;padding-bottom:50px;border-bottom:1px solid var(--line-soft)}
+.foot-brand{display:flex;align-items:center;gap:14px}
+.foot-brand img{width:48px}
+.foot-brand .name{font-family:var(--fd);font-size:1.16rem;letter-spacing:.18em;font-weight:500}
+.foot-brand .romaji{font-family:var(--fl);font-size:.58rem;letter-spacing:.32em;color:var(--ink-faint);text-transform:uppercase;margin-top:3px}
+.foot-nav{display:grid;grid-template-columns:1fr 1fr;gap:14px 30px;align-self:center}
+.foot-nav a{font-size:.82rem;letter-spacing:.1em;color:var(--ink-soft);transition:color .3s}
+.foot-nav a:hover{color:var(--green)}
+.foot-contact{text-align:right}
+.foot-contact .tel{font-family:var(--fl);font-size:1.7rem;letter-spacing:.08em;color:var(--ink)}
+.foot-contact .hours{font-size:.76rem;color:var(--ink-faint);letter-spacing:.06em;margin-top:4px}
+.foot-contact .social{display:flex;gap:16px;justify-content:flex-end;margin-top:20px}
+.foot-contact .social a{width:34px;height:34px;border:1px solid var(--line);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:border-color .3s,background .3s}
+.foot-contact .social a svg{width:16px;height:16px;fill:var(--green)}
+.foot-contact .social a:hover{background:var(--green)}
+.foot-contact .social a:hover svg{fill:#F4F3EF}
+.foot-bottom{display:flex;align-items:center;justify-content:space-between;padding-top:26px;flex-wrap:wrap;gap:12px}
+.foot-bottom .copy{font-size:.74rem;color:var(--ink-faint);letter-spacing:.06em}
+.foot-bottom .legal{display:flex;gap:26px}
+.foot-bottom .legal a{font-size:.74rem;color:var(--ink-faint);letter-spacing:.08em}
+.foot-bottom .legal a:hover{color:var(--green)}
+
+/* ---------- reveal animation (JS-gated so content shows without JS) ---------- */
+.reveal{transition:opacity 1s ease,transform 1s cubic-bezier(.2,.7,.2,1)}
+.js .reveal{opacity:0;transform:translateY(26px)}
+.js .reveal.in{opacity:1;transform:none}
+
+/* ---------- responsive ---------- */
+@media(max-width:980px){
+  nav,.header-cta{display:none}
+  .menu-toggle{display:flex;flex-direction:column;gap:5px;margin-left:auto;padding:0 40px;cursor:pointer;background:none;border:none}
+  .menu-toggle span{width:26px;height:2px;background:var(--ink);display:block}
+  .concept-grid,.cta-inner{grid-template-columns:1fr;gap:46px}
+  .hero{display:block;min-height:auto;padding:130px 0 56px}
+  .hero-photo{position:static;width:100%;height:auto;margin:0 0 4px}
+  .hero-photo img{height:auto;object-fit:contain}
+  .hero-birds{display:none}
+  .hero-inner{position:static}
+  .hero h1{font-size:clamp(2.4rem,9vw,3.4rem)}
+  .craft{display:block;min-height:auto;padding:90px 0 0}
+  .craft-text{max-width:none}
+  .craft-photo{position:relative;width:100%;height:300px;margin-top:46px}
+  .craft-photo img{border-radius:28px 28px 0 0}
+  .craft-birds,.craft-wave{display:none}
+  .cta .btn{justify-self:start}
+}
+@media(max-width:760px){
+  .container{padding:0 24px}
+  .brand{padding-left:24px}
+  .voice{display:block;min-height:auto;padding:70px 0 0}
+  .voice-text{max-width:none}
+  .voice-photos{position:static;width:auto;grid-template-columns:1fr 1fr;height:280px;margin-top:36px}
+  .voice-photos div{border-radius:0}
+  .voice-top,.voice-wave{display:none}
+  .works-grid{grid-template-columns:1fr;gap:40px}
+  .steps{grid-template-columns:1fr 1fr;gap:30px 24px}
+  .concept-photos{grid-template-columns:1fr 1fr}
+  .foot-top{grid-template-columns:1fr;gap:34px;text-align:left}
+  .foot-contact{text-align:left}.foot-contact .social{justify-content:flex-start}
+  .trans-inner{flex-direction:column;align-items:flex-end}
+  .tags{gap:0;font-size:.9rem}
+  .tags span{padding:6px 18px}
+}
+@media(prefers-reduced-motion:reduce){
+  .js .reveal{opacity:1;transform:none;transition:none}
+  .js .hero-photo{animation:none}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+<script>document.documentElement.classList.add('js')</script>
+
+<div class="mobile-nav" id="mnav">
+  <button class="close" aria-label="閉じる"></button>
+  <a href="#concept">私たちのこと</a>
+  <a href="#concept">家づくり</a>
+  <a href="#works">施工事例</a>
+  <a href="#voice">見学会・イベント</a>
+  <a href="#process">家づくりの流れ</a>
+  <a href="#footer">よくあるご質問</a>
+  <a class="btn m-cta" href="#cta"><span>ご相談・お問い合わせ</span><span class="ar"></span></a>
+</div>
+
+
+<header id="hdr">
+  <a href="#top" class="brand">
+    <img src="images/img01_671a2763.png" alt="森の樹工務店">
+    <div><div class="name">森の樹工務店</div><div class="romaji">Morino-ki Koumuten</div></div>
+  </a>
+  <nav>
+    <a href="#concept">私たちのこと</a>
+    <a href="#concept">家づくり</a>
+    <a href="#works">施工事例</a>
+    <a href="#voice">見学会・イベント</a>
+    <a href="#process">家づくりの流れ</a>
+    <a href="#footer">よくあるご質問</a>
+  </nav>
+  <a href="#cta" class="header-cta"><span>ご相談・お問い合わせ</span><span class="ar"></span></a>
+  <button class="menu-toggle" aria-label="メニュー"><span></span><span></span><span></span></button>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-photo"><img src="images/img02_b8d93ced.png" alt="森に囲まれた平屋の住まい"></div>
+    <img class="hero-birds" src="images/img03_abcf7328.png" alt="">
+    <div class="hero-inner"><div class="container"><div class="hero-copy reveal">
+      <h1>自然と暮らす、<br>家をつくる。</h1>
+      <div class="en">Building homes<br>with nature.</div>
+      <p class="lead">森の樹工務店は、自然素材と確かな技術で、<br>家族の未来によりそう住まいをつくります。</p>
+      <a href="#cta" class="btn"><span>ご相談・お問い合わせ</span><span class="ar"></span></a>
+    </div></div></div>
+  </section>
+
+  <!-- CONCEPT -->
+  <section class="concept" id="concept">
+    <div class="container">
+      <div class="concept-grid">
+        <div class="concept-text reveal">
+          <div class="eyebrow">Concept</div>
+          <h2 class="disp">自然のめぐみを生かし、<br>丁寧につくる。</h2>
+          <p class="lead">無垢の木や漆喰、土や石など、自然素材には心を落ち着かせ、暮らしをやさしく包み込む力があります。私たちは、その土地の気候や風土を大切にしながら、一棟一棟、丁寧に家づくりを行います。</p>
+          <a href="#works" class="txtlink">私たちの考える家づくり<span class="arrow"></span></a>
+        </div>
+        <div class="concept-photos reveal">
+          <div class="p-tall"><img src="images/img04_f3bf09df.jpg" alt="無垢材の室内"></div>
+          <div class="p-s"><img src="images/img05_bc1ce7b9.jpg" alt="新緑"></div>
+          <div class="p-s"><img src="images/img06_a6bda5cf.jpg" alt="漆喰の壁と花"></div>
+        </div>
+      </div>
+      <div class="tags reveal">
+        <span>無垢材</span><span>漆喰</span><span>断熱</span><span>設計</span><span>施工</span>
+      </div>
+    </div>
+    <div class="mt-band reveal"><img src="images/img07_7ff090be.png" alt="" aria-hidden="true"></div>
+  </section>
+
+  <!-- CRAFTSMANSHIP -->
+  <section class="craft" id="craft">
+    <img class="craft-birds" src="images/img03_abcf7328.png" alt="" aria-hidden="true">
+    <div class="craft-photo reveal"><img src="images/hari.png" alt="手刻みの木組み"></div>
+    <div class="craft-wave" aria-hidden="true"><svg viewBox="0 0 1440 104" preserveAspectRatio="none"><path d="M0,104 L0,54 C360,16 1080,16 1440,48 L1440,104 Z" fill="#EEEBE1"/></svg></div>
+    <div class="container">
+      <div class="craft-text reveal">
+        <div class="eyebrow">Craftsmanship</div>
+        <h2 class="disp">見えないところに、<br>本当の品質がある。</h2>
+        <p class="lead">木の性格を見極め、手刻みで丁寧に加工する。断熱・気密・耐震の性能は、目に見えない部分こそ誠実に、確実に。森の樹工務店は、世代を超えて安心して暮らせる住まいをつくります。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORKS -->
+  <section class="works" id="works">
+    <div class="container">
+      <div class="works-head reveal">
+        <div><div class="eyebrow">Works</div><h2>施工事例</h2></div>
+        <a href="#works" class="txtlink">すべての事例を見る<span class="arrow"></span></a>
+      </div>
+      <div class="works-grid">
+        <a class="work-card reveal" href="#works">
+          <div class="thumb"><img src="images/jirei1.png" alt="里山の平屋"></div>
+          <div class="ttl">里山の平屋</div>
+          <div class="meta"><span class="loc">栃木県那須塩原市</span><span class="ar"></span></div>
+        </a>
+        <a class="work-card reveal" href="#works">
+          <div class="thumb"><img src="images/jirei2.png" alt="庭を愉しむ家"></div>
+          <div class="ttl">庭を愉しむ家</div>
+          <div class="meta"><span class="loc">群馬県前橋市</span><span class="ar"></span></div>
+        </a>
+        <a class="work-card reveal" href="#works">
+          <div class="thumb"><img src="images/jirei3.png" alt="木陰と土間のある家"></div>
+          <div class="ttl">木陰と土間のある家</div>
+          <div class="meta"><span class="loc">埼玉県飯能市</span><span class="ar"></span></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="process" id="process">
+    <div class="container">
+      <div class="reveal"><div class="eyebrow">Process</div><h2>家づくりの流れ</h2>
+        <p class="lead proc-lead">森の樹工務店の家づくりは、5つのこと。ご相談からお引き渡しの後まで、一つひとつのステップを丁寧に進めます。</p>
+      </div>
+      <div class="steps">
+        <div class="step reveal"><div class="no">01</div><div class="st">ご相談・ヒアリング</div><div class="ds">暮らしの理想やご希望、敷地のことなどを丁寧にお伺いします。</div></div>
+        <div class="step reveal"><div class="no">02</div><div class="st">プラン・お見積り</div><div class="ds">敷地やご予算に合わせて、最適なプランをご提案します。</div></div>
+        <div class="step reveal"><div class="no">03</div><div class="st">ご契約・詳細設計</div><div class="ds">仕様や素材を決め、詳細な図面をつくり上げていきます。</div></div>
+        <div class="step reveal"><div class="no">04</div><div class="st">施工</div><div class="ds">職人が丁寧に施工し、現場での品質管理を徹底します。</div></div>
+        <div class="step reveal"><div class="no">05</div><div class="st">お引き渡し・アフター</div><div class="ds">お引き渡し後も、点検やメンテナンスで末永くサポートします。</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VOICE -->
+  <section class="voice" id="voice">
+    <div class="voice-photos reveal">
+      <div><img src="images/koe1.png" alt="ご家族の暮らし"></div>
+      <div><img src="images/koe2.png" alt="室内のしつらえ"></div>
+    </div>
+    <div class="voice-top" aria-hidden="true"><svg viewBox="0 0 1440 170" preserveAspectRatio="none"><path d="M0,0 H1440 V44 C1000,44 600,168 0,150 Z" fill="#EEEBE1"/></svg></div>
+    <div class="voice-wave" aria-hidden="true"><svg viewBox="0 0 1440 104" preserveAspectRatio="none"><path d="M0,104 L0,52 C420,14 1020,14 1440,46 L1440,104 Z" fill="#43532B"/></svg></div>
+    <div class="container">
+      <div class="voice-text reveal">
+        <div class="eyebrow">Voice</div>
+        <h2>お客様の声</h2>
+        <p class="lead">森の樹工務店さんの家に暮らし始めてから、家にいる時間がいちばん心地よくなりました。自然の素材の香りや、光や風の入り方まで計算されていて、毎日が気持ちいいです。</p>
+        <div class="who">栃木県那須塩原市　K様ご家族</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta" id="cta">
+    <div class="container"><div class="cta-inner reveal">
+      <h2>森の樹工務店の家づくりを、<br>まずはお気軽にご相談ください。</h2>
+      <p class="note">土地探しや資金計画のご相談も承っています。<br>オンラインでのご相談も可能です。</p>
+      <a href="#" class="btn"><span>ご相談・お問い合わせ</span><span class="ar"></span></a>
+    </div></div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer id="footer">
+  <div class="container">
+    <div class="foot-top">
+      <a href="#top" class="foot-brand">
+        <img src="images/img01_671a2763.png" alt="森の樹工務店">
+        <div><div class="name">森の樹工務店</div><div class="romaji">Morino-ki Koumuten</div></div>
+      </a>
+      <nav class="foot-nav">
+        <a href="#concept">私たちのこと</a><a href="#concept">家づくり</a>
+        <a href="#works">施工事例</a><a href="#voice">見学会・イベント</a>
+        <a href="#process">家づくりの流れ</a><a href="#footer">よくあるご質問</a>
+        <a href="#">ブログ</a>
+      </nav>
+      <div class="foot-contact">
+        <div class="tel">TEL. 0287-00-1234</div>
+        <div class="hours">受付時間　9:00–18:00（火・水定休）</div>
+        <div class="social">
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.07 1.2.05 1.8.25 2.2.42.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.17.4.37 1 .42 2.2.06 1.3.07 1.7.07 4.9s0 3.6-.07 4.9c-.05 1.2-.25 1.8-.42 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.17-1 .37-2.2.42-1.3.06-1.7.07-4.9.07s-3.6 0-4.9-.07c-1.2-.05-1.8-.25-2.2-.42-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.17-.4-.37-1-.42-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.07-4.9c.05-1.2.25-1.8.42-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.17 1-.37 2.2-.42C8.4 2.2 8.8 2.2 12 2.2zm0 1.8c-3.1 0-3.5 0-4.7.07-1.1.05-1.7.24-2.1.4-.5.2-.9.43-1.3.83-.4.4-.63.8-.83 1.3-.16.4-.35 1-.4 2.1C2.6 9.7 2.6 10.1 2.6 12s0 2.3.07 3.5c.05 1.1.24 1.7.4 2.1.2.5.43.9.83 1.3.4.4.8.63 1.3.83.4.16 1 .35 2.1.4 1.2.07 1.6.07 4.7.07s3.5 0 4.7-.07c1.1-.05 1.7-.24 2.1-.4.5-.2.9-.43 1.3-.83.4-.4.63-.8.83-1.3.16-.4.35-1 .4-2.1.07-1.2.07-1.6.07-3.5s0-2.3-.07-3.5c-.05-1.1-.24-1.7-.4-2.1-.2-.5-.43-.9-.83-1.3-.4-.4-.8-.63-1.3-.83-.4-.16-1-.35-2.1-.4C15.5 4 15.1 4 12 4zm0 3.1A4.9 4.9 0 1012 16.9 4.9 4.9 0 0012 7.1zm0 8a3.1 3.1 0 110-6.2 3.1 3.1 0 010 6.2zm6.2-8.2a1.15 1.15 0 11-2.3 0 1.15 1.15 0 012.3 0z"/></svg></a>
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M13.5 21v-8h2.7l.4-3.1h-3.1V7.9c0-.9.25-1.5 1.5-1.5h1.6V3.6c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.3H7.6V13h2.6v8h3.3z"/></svg></a>
+          <a href="#" aria-label="Mail"><svg viewBox="0 0 24 24"><path d="M3 5h18a1 1 0 011 1v12a1 1 0 01-1 1H3a1 1 0 01-1-1V6a1 1 0 011-1zm9 7.2L4.3 7H19.7L12 12.2zM4 8.3V17h16V8.3l-8 5.4-8-5.4z"/></svg></a>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <div class="copy">© 2024 森の樹工務店　一級建築士事務所</div>
+      <div class="legal"><a href="#">プライバシーポリシー</a><a href="#">サイトマップ</a></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+const hdr=document.getElementById('hdr');
+addEventListener('scroll',()=>{hdr.classList.toggle('scrolled',scrollY>40)},{passive:true});
+const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+document.querySelectorAll('.reveal').forEach((el,i)=>{el.style.transitionDelay=(Math.min(i%3,3)*0.08)+'s';io.observe(el)});
+const mnav=document.getElementById('mnav');
+document.querySelector('.menu-toggle').addEventListener('click',()=>document.body.classList.add('menu-open'));
+mnav.querySelector('.close').addEventListener('click',()=>document.body.classList.remove('menu-open'));
+mnav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>document.body.classList.remove('menu-open')));
+</script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+This skill ("frontend-design") is from Anthropic's public Agent Skills repository.
+
+Source: https://github.com/anthropics/skills/tree/main/skills/frontend-design
+
+For the complete and authoritative license terms, see the LICENSE.txt file in
+the source repository linked above.

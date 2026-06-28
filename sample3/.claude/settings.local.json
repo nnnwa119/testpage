@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls -la \"new/files (2)/\")",
+      "Bash(code --list-extensions)",
+      "Bash(code --install-extension anthropic.claude-code --force)",
+      "Bash(python -c \"from PIL import Image; print\\('ok'\\)\")",
+      "Bash(python -c ' *)",
+      "Bash(mkdir -p crops)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
